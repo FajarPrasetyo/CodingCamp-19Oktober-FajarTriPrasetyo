@@ -2,8 +2,10 @@
 
 A clean, modern, and minimal client-side productivity dashboard web application built with pure HTML, CSS, and Vanilla JavaScript.
 
-🌐 **Live Demo (GitHub Pages):**  
-[https://fajarprasetyo.github.io/CodingCamp-19Oktober-FajarTriPrasetyo/](https://fajarprasetyo.github.io/CodingCamp-19Oktober-FajarTriPrasetyo/)
+🌐 **Live Demo (Langsung Bisa Dibuka Siapapun):**  
+- **Instant Preview Link:** [https://raw.githack.com/FajarPrasetyo/CodingCamp-19Oktober-FajarTriPrasetyo/main/index.html](https://raw.githack.com/FajarPrasetyo/CodingCamp-19Oktober-FajarTriPrasetyo/main/index.html)  
+- **GitHub Pages Sub-Path:** [https://fajarprasetyo.github.io/CodingCamp-19Oktober-FajarTriPrasetyo/](https://fajarprasetyo.github.io/CodingCamp-19Oktober-FajarTriPrasetyo/)  
+*(Catatan: URL sub-path ini tidak mengganggu/menimpa root domain portofolio https://fajarprasetyo.github.io/)*
 
 ---
 
