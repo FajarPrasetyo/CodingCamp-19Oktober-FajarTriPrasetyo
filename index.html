@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Productivity Dashboard</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Top Action Bar (Theme Toggle) -->
+    <div class="top-bar">
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light/dark mode" title="Toggle Theme">
+        <span class="theme-icon" id="theme-icon">🌙</span>
+        <span class="theme-label" id="theme-label">Dark Mode</span>
+      </button>
+    </div>
+
+    <!-- Header / Greeting Card -->
+    <header class="card greeting-card" id="greeting-section">
+      <div class="time-display" id="time-display">00:00:00</div>
+      <div class="date-display" id="date-display">Loading date...</div>
+      
+      <div class="greeting-wrapper">
+        <h1 class="greeting-text">
+          <span id="greeting-salutation">Good Day</span>, 
+          <span id="greeting-name" class="greeting-name" title="Click to edit name">Friend</span>
+        </h1>
+        <button type="button" class="icon-btn edit-name-btn" id="edit-name-btn" title="Edit your name" aria-label="Edit Name">
+          ✏️
+        </button>
+      </div>
+
+      <!-- Hidden inline edit form for custom name -->
+      <form class="name-edit-form hidden" id="name-edit-form">
+        <input 
+          type="text" 
+          id="name-input" 
+          class="form-input name-input" 
+          placeholder="Enter your name..." 
+          maxlength="25"
+          autocomplete="off"
+        >
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="cancel-name-btn">Cancel</button>
+      </form>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="dashboard-grid">
+      
+      <!-- Left Column: Focus Timer & Quick Links -->
+      <div class="grid-left">
+        
+        <!-- Focus Timer Card -->
+        <section class="card timer-card" id="timer-section">
+          <h2 class="card-title">Focus Timer</h2>
+          
+          <!-- Timer Duration Presets -->
+          <div class="timer-presets" id="timer-presets">
+            <button type="button" class="preset-btn active" data-minutes="25">25m</button>
+            <button type="button" class="preset-btn" data-minutes="15">15m</button>
+            <button type="button" class="preset-btn" data-minutes="50">50m</button>
+            <button type="button" class="preset-btn" id="custom-time-btn" data-custom="true">Custom</button>
+          </div>
+
+          <!-- Custom Time Input (Hidden by default) -->
+          <div class="custom-time-wrapper hidden" id="custom-time-wrapper">
+            <input 
+              type="number" 
+              id="custom-minutes-input" 
+              class="form-input custom-minutes-input" 
+              placeholder="Minutes (1-180)" 
+              min="1" 
+              max="180"
+            >
+            <button type="button" class="btn btn-primary btn-sm" id="set-custom-time-btn">Set</button>
+          </div>
+
+          <div class="timer-display" id="timer-display">25:00</div>
+          
+          <div class="timer-controls">
+            <button type="button" class="btn btn-primary" id="timer-start-btn">Start</button>
+            <button type="button" class="btn btn-secondary" id="timer-stop-btn">Stop</button>
+            <button type="button" class="btn btn-secondary" id="timer-reset-btn">Reset</button>
+          </div>
+        </section>
+
+        <!-- Quick Links Card -->
+        <section class="card quicklinks-card" id="quicklinks-section">
+          <h2 class="card-title">Quick Links</h2>
+          <form class="quicklinks-form" id="quicklinks-form">
+            <input 
+              type="text" 
+              id="link-name-input" 
+              class="form-input" 
+              placeholder="Link name" 
+              autocomplete="off"
+              required
+            >
+            <input 
+              type="text" 
+              id="link-url-input" 
+              class="form-input" 
+              placeholder="URL (e.g. google.com)" 
+              autocomplete="off"
+              required
+            >
+            <button type="submit" class="btn btn-primary" id="add-link-btn">Add Link</button>
+          </form>
+          <div class="quicklinks-container" id="quicklinks-list">
+            <!-- Dynamic Quick Links rendered here -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: To-Do Tasks -->
+      <div class="grid-right">
+        
+        <!-- Tasks Card -->
+        <section class="card tasks-card" id="tasks-section">
+          <div class="tasks-header">
+            <h2 class="card-title" style="margin-bottom: 0;">Tasks</h2>
+            
+            <!-- Sort Selector -->
+            <div class="sort-wrapper">
+              <label for="task-sort-select" class="sort-label">Sort:</label>
+              <select id="task-sort-select" class="form-select">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="alphabetical">A-Z</option>
+                <option value="status">Active first</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Add Task Form -->
+          <form class="tasks-form" id="task-form">
+            <input 
+              type="text" 
+              id="task-input" 
+              class="form-input" 
+              placeholder="Add a new task..." 
+              autocomplete="off"
+              required
+            >
+            <button type="submit" class="btn btn-primary" id="add-task-btn">Add</button>
+          </form>
+
+          <!-- Duplicate / Validation Warning Message -->
+          <div class="task-feedback-msg hidden" id="task-feedback-msg"></div>
+
+          <!-- Tasks List -->
+          <ul class="task-list" id="task-list">
+            <!-- Dynamic task items rendered here -->
+          </ul>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
