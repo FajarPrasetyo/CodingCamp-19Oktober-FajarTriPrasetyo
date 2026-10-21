@@ -14,38 +14,12 @@ This web application is designed to help you stay focused, organized, and produc
 
 ## ✨ Features
 
-- 🕒 **Real-Time Clock & Dynamic Greeting**:
-  - Displays current time (`HH:MM:SS`) updated every second.
-  - Shows full date format (e.g., *Tuesday, January 27, 2026*).
-  - Dynamic greeting based on the hour (*Good Morning*, *Good Afternoon*, *Good Evening*, *Good Night*).
-  - 👤 **Custom Name**: Click on your name or the edit icon (✏️) to customize your name. Persisted in `localStorage`.
-
-- 🌓 **Light & Dark Mode**:
-  - Smooth theme switcher with custom CSS variable tokens.
-  - Midnight slate aesthetic for dark mode and lilac/violet gradient for light mode.
-  - Remembers your theme preference in `localStorage`.
-
-- ⏱️ **Focus Timer (Pomodoro)**:
-  - Preset durations: **25m**, **15m**, **50m**, and **Custom** (1 - 180 minutes).
-  - Clean controls: **Start**, **Stop** (Pause/Resume), and **Reset**.
-  - Web Audio chime sound and alert notification upon session completion.
-
-- ✅ **To-Do List (Tasks)**:
-  - **Add Tasks**: Quick input with Enter key support.
-  - 🚫 **Prevent Duplicates**: Case-insensitive duplicate task prevention with visual alert.
-  - ✏️ **Edit Tasks**: Inline task editing with Save / Cancel controls or Enter key.
-  - 🗹 **Mark Done**: Checkbox toggle with strikethrough styling.
-  - 🗑️ **Delete Tasks**: Remove tasks with one click.
-  - 🔀 **Sort Tasks**: Sort by *Newest*, *Oldest*, *A-Z (Alphabetical)*, and *Active first*.
-  - Full persistence using browser `localStorage`.
-
-- 🔗 **Quick Links**:
-  - One-click launch buttons for favorite websites in a new tab.
-  - Pre-populated with *Google*, *Gmail*, and *Calendar*.
-  - Add new links with custom name and URL (auto-handles `https://`).
-  - Delete links with the `×` button.
-  - Persisted in `localStorage`.
-
+🕒 **Real-Time Clock & Dynamic Greeting**:
+🌓 **Light & Dark Mode**:
+⏱️ **Focus Timer (Pomodoro)**:
+✅ **To-Do List (Tasks)**:
+🔗 **Quick Links**:
+  
 ---
 
 ## 🛠️ Tech Stack & Constraints
